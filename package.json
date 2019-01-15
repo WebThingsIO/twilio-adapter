@@ -1,0 +1,65 @@
+{
+  "name": "twilio-adapter",
+  "display_name": "Twilio",
+  "version": "0.0.1",
+  "description": "Simple Twilio API actions. Needs to be configured with an account SID, auth token, and Twilio-given number.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hobinjk@gmail.com",
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hobinjk/twilio-adapter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hobinjk/twilio-adapter/issues"
+  },
+  "files": [
+    "LICENSE",
+    "SHA256SUMS",
+    "index.js",
+    "node_modules",
+    "twilio-adapter.js"
+  ],
+  "moziot": {
+    "api": {
+      "min": 2,
+      "max": 2
+    },
+    "enabled": true,
+    "plugin": true,
+    "exec": "{nodeLoader} {path}",
+    "config": {
+      "accountSid": "",
+      "authToken": "",
+      "fromPhoneNumber": ""
+    },
+    "schema": {
+      "type": "object",
+      "required": [
+        "accountSid",
+        "authToken",
+        "fromPhoneNumber"
+      ],
+      "properties": {
+        "accountSid": {
+          "type": "string"
+        },
+        "authToken": {
+          "type": "string"
+        },
+        "fromPhoneNumber": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "twilio": "^3.27.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0"
+  }
+}
