@@ -7,14 +7,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "hobinjk@gmail.com",
+  "homepage": "https://github.com/mozilla-iot/twilio-adapter",
+  "author": "Mozilla IoT",
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hobinjk/twilio-adapter.git"
+    "url": "https://github.com/mozilla-iot/twilio-adapter.git"
   },
   "bugs": {
-    "url": "https://github.com/hobinjk/twilio-adapter/issues"
+    "url": "https://github.com/mozilla-iot/twilio-adapter/issues"
   },
   "files": [
     "LICENSE",
