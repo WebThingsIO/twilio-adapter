@@ -119,7 +119,7 @@ class TwilioDevice extends Device {
       await sendText(action.input.to,
                       action.input.body || '');
     } else if (action.name === 'sendNotification') {
-      await sendText(action.input.to, 'Notification from Things Gateway');
+      await sendText(action.input.to, 'Notification from WebThings Gateway');
     }
 
     action.finish();
