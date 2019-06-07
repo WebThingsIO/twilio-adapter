@@ -1,7 +1,7 @@
 {
   "name": "twilio-adapter",
   "display_name": "Twilio",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple Twilio API actions. Needs to be configured with an account SID, auth token, and Twilio-given number.",
   "main": "index.js",
   "scripts": {
