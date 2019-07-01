@@ -2,7 +2,6 @@ const twilio = require('twilio');
 
 const {
   Adapter,
-  Database,
   Device,
 } = require('gateway-addon');
 
@@ -10,6 +9,7 @@ const config = {
   accountSid: null,
   authToken: null,
   fromPhoneNumber: null,
+  toPhoneNumber: null,
 };
 
 function getOptions() {
@@ -116,8 +116,7 @@ class TwilioDevice extends Device {
     action.start();
 
     if (action.name === 'send') {
-      await sendText(action.input.to,
-                      action.input.body || '');
+      await sendText(action.input.to, action.input.body || '');
     } else if (action.name === 'sendNotification') {
       await sendText(action.input.to, 'Notification from WebThings Gateway');
     }
@@ -131,29 +130,16 @@ class TwilioDevice extends Device {
  * Instantiates one twilio device
  */
 class TwilioAdapter extends Adapter {
-  constructor(adapterManager, manifestName) {
-    super(adapterManager, 'twilio', manifestName);
+  constructor(addonManager, manifest) {
+    super(addonManager, 'twilio', manifest.name);
 
-    adapterManager.addAdapter(this);
-    this.addAllThings();
+    addonManager.addAdapter(this);
+
+    Object.assign(config, manifest.moziot.config);
+    this.startPairing();
   }
 
   startPairing() {
-    this.addAllThings();
-  }
-
-  async loadConfig() {
-    const db = new Database(this.packageName);
-    await db.open();
-    const dbConfig = await db.loadConfig();
-    Object.assign(config, dbConfig);
-  }
-
-  addAllThings() {
-    this.loadConfig().catch(function(err) {
-      console.warn('Error updating config', err);
-    });
-
     if (!this.devices['twilio-0']) {
       new TwilioDevice(this, 'twilio-0', twilioThing);
     }
@@ -161,4 +147,3 @@ class TwilioAdapter extends Adapter {
 }
 
 module.exports = TwilioAdapter;
-
