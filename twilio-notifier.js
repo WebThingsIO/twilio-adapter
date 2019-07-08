@@ -72,7 +72,6 @@ class TwilioNotifier extends Notifier {
     addonManager.addNotifier(this);
 
     Object.assign(config, manifest.moziot.config);
-    this.startPairing();
 
     if (!this.outlets['twilio-0']) {
       this.handleOutletAdded(new TwilioOutlet(this, 'twilio-0'));
