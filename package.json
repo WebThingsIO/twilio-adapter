@@ -64,7 +64,7 @@
     }
   },
   "dependencies": {
-    "twilio": "^3.33.0"
+    "twilio": "^3.33.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",
