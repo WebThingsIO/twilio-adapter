@@ -43,7 +43,15 @@ console.
 ![Gateway's addon list, highlighting the Twilio adapter's configure button](doc/twilio_addon_list.png)
 ![Configuration screen for the Twilio adapter](doc/twilio_config.png)
 
-Finally, navigate to the main Things page and click the plus button to add the
-Twilio thing. Unfortunately it is not currently supported in any rules, but an
-update to the rules engine should fix this soon.
+With the adapter installed we can now navigate to the main Things page and
+click the plus button to add the Twilio thing.
+
 ![Image of the Twilio Thing's detail page](doc/twilio_detail.png)
+
+Finally, we navigate to the Rules section of the Gateway to use
+Twilio notifications in a rule. We drag and drop the Twilio Notification block
+to the Effect (right) side of the rule and click "Configure" to setup a basic
+message.
+
+![The rule screen with a Twilio notification block](doc/rule_overview.png)
+![The rule screen with a Twilio notification block being configured](doc/rule_config.png)
