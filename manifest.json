@@ -1,0 +1,50 @@
+{
+  "author": "Mozilla IoT",
+  "description": "Simple Twilio API actions. Needs to be configured with an account SID, auth token, and Twilio-given number.",
+  "gateway_specific_settings": {
+    "webthings": {
+      "exec": "{nodeLoader} {path}",
+      "primary_type": "notifier",
+      "strict_max_version": "*",
+      "strict_min_version": "0.10.0"
+    }
+  },
+  "homepage_url": "https://github.com/mozilla-iot/twilio-adapter",
+  "id": "twilio-adapter",
+  "license": "MPL-2.0",
+  "manifest_version": 1,
+  "name": "Twilio",
+  "options": {
+    "default": {
+      "accountSid": "",
+      "authToken": "",
+      "fromPhoneNumber": "",
+      "toPhoneNumber": ""
+    },
+    "schema": {
+      "type": "object",
+      "required": [
+        "accountSid",
+        "authToken",
+        "fromPhoneNumber",
+        "toPhoneNumber"
+      ],
+      "properties": {
+        "accountSid": {
+          "type": "string"
+        },
+        "authToken": {
+          "type": "string"
+        },
+        "fromPhoneNumber": {
+          "type": "string"
+        },
+        "toPhoneNumber": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "short_name": "Twilio",
+  "version": "0.2.0"
+}

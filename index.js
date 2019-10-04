@@ -10,12 +10,12 @@
 
 const TwilioAdapter = require('./twilio-adapter');
 
-module.exports = (addonManager, manifest) => {
-  new TwilioAdapter(addonManager, manifest);
+module.exports = (addonManager) => {
+  new TwilioAdapter(addonManager);
 
   try {
     const TwilioNotifier = require('./twilio-notifier');
-    new TwilioNotifier(addonManager, manifest);
+    new TwilioNotifier(addonManager);
   } catch (e) {
     if (!(e instanceof TypeError)) {
       console.error(e);

@@ -1,7 +1,9 @@
+const manifest = require('./manifest.json');
 const twilio = require('twilio');
 
 const {
   Constants,
+  Database,
   Notifier,
   Outlet,
 } = require('gateway-addon');
@@ -66,16 +68,21 @@ class TwilioOutlet extends Outlet {
  * Instantiates one Twilio outlet
  */
 class TwilioNotifier extends Notifier {
-  constructor(addonManager, manifest) {
-    super(addonManager, 'twilio', manifest.name);
+  constructor(addonManager) {
+    super(addonManager, manifest.id, manifest.id);
 
     addonManager.addNotifier(this);
 
-    Object.assign(config, manifest.moziot.config);
+    const db = new Database(manifest.id);
+    db.open().then(() => {
+      return db.loadConfig();
+    }).then((cfg) => {
+      Object.assign(config, cfg);
 
-    if (!this.outlets['twilio-0']) {
-      this.handleOutletAdded(new TwilioOutlet(this, 'twilio-0'));
-    }
+      if (!this.outlets['twilio-0']) {
+        this.handleOutletAdded(new TwilioOutlet(this, 'twilio-0'));
+      }
+    }).catch(console.error);
   }
 }
 
