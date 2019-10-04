@@ -1,7 +1,9 @@
+const manifest = require('./manifest.json');
 const twilio = require('twilio');
 
 const {
   Adapter,
+  Database,
   Device,
 } = require('gateway-addon');
 
@@ -130,13 +132,18 @@ class TwilioDevice extends Device {
  * Instantiates one twilio device
  */
 class TwilioAdapter extends Adapter {
-  constructor(addonManager, manifest) {
-    super(addonManager, 'twilio', manifest.name);
+  constructor(addonManager) {
+    super(addonManager, manifest.id, manifest.id);
 
     addonManager.addAdapter(this);
 
-    Object.assign(config, manifest.moziot.config);
-    this.startPairing();
+    const db = new Database(manifest.id);
+    db.open().then(() => {
+      return db.loadConfig();
+    }).then((cfg) => {
+      Object.assign(config, cfg);
+      this.startPairing();
+    }).catch(console.error);
   }
 
   startPairing() {

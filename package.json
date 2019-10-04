@@ -1,7 +1,7 @@
 {
   "name": "twilio-adapter",
   "display_name": "Twilio",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple Twilio API actions. Needs to be configured with an account SID, auth token, and Twilio-given number.",
   "main": "index.js",
   "scripts": {
@@ -19,8 +19,10 @@
   },
   "files": [
     "LICENSE",
+    "README.md",
     "SHA256SUMS",
     "index.js",
+    "manifest.json",
     "node_modules",
     "twilio-adapter.js",
     "twilio-notifier.js"
@@ -64,10 +66,10 @@
     }
   },
   "dependencies": {
-    "twilio": "^3.33.4"
+    "twilio": "^3.35.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "eslint": "^6.2.2"
+    "eslint": "^6.5.1"
   }
 }
