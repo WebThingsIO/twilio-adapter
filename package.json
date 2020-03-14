@@ -66,10 +66,10 @@
     }
   },
   "dependencies": {
-    "twilio": "^3.35.1"
+    "twilio": "^3.40.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.5.1"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0"
   }
 }
