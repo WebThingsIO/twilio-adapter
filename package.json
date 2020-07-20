@@ -1,7 +1,6 @@
 {
   "name": "twilio-adapter",
-  "display_name": "Twilio",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Simple Twilio API actions. Needs to be configured with an account SID, auth token, and Twilio-given number.",
   "main": "index.js",
   "scripts": {
@@ -27,49 +26,11 @@
     "twilio-adapter.js",
     "twilio-notifier.js"
   ],
-  "moziot": {
-    "api": {
-      "min": 2,
-      "max": 2
-    },
-    "type": "notifier",
-    "plugin": true,
-    "exec": "{nodeLoader} {path}",
-    "config": {
-      "accountSid": "",
-      "authToken": "",
-      "fromPhoneNumber": "",
-      "toPhoneNumber": ""
-    },
-    "schema": {
-      "type": "object",
-      "required": [
-        "accountSid",
-        "authToken",
-        "fromPhoneNumber",
-        "toPhoneNumber"
-      ],
-      "properties": {
-        "accountSid": {
-          "type": "string"
-        },
-        "authToken": {
-          "type": "string"
-        },
-        "fromPhoneNumber": {
-          "type": "string"
-        },
-        "toPhoneNumber": {
-          "type": "string"
-        }
-      }
-    }
-  },
   "dependencies": {
     "twilio": "^3.48.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.4.0"
+    "eslint": "^7.5.0"
   }
 }
