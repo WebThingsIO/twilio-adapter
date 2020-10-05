@@ -1,20 +1,20 @@
 {
   "name": "twilio-adapter",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Simple Twilio API actions. Needs to be configured with an account SID, auth token, and Twilio-given number.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint ."
   },
-  "homepage": "https://github.com/mozilla-iot/twilio-adapter",
-  "author": "Mozilla IoT",
+  "homepage": "https://github.com/WebThingsIO/twilio-adapter",
+  "author": "WebThingsIO",
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mozilla-iot/twilio-adapter.git"
+    "url": "https://github.com/WebThingsIO/twilio-adapter.git"
   },
   "bugs": {
-    "url": "https://github.com/mozilla-iot/twilio-adapter/issues"
+    "url": "https://github.com/WebThingsIO/twilio-adapter/issues"
   },
   "files": [
     "LICENSE",
@@ -27,10 +27,10 @@
     "twilio-notifier.js"
   ],
   "dependencies": {
-    "twilio": "^3.48.0"
+    "twilio": "^3.49.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.5.0"
+    "eslint": "^7.10.0"
   }
 }
